@@ -1,5 +1,7 @@
 package utilities;
 
+import java.util.ArrayList;
+
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
@@ -46,6 +48,8 @@ public class JSWaiter {
         JavascriptExecutor jsExec = (JavascriptExecutor) jsWaitDriver;
 
         String angularReadyScript = "return angular.element(document).injector().get('$http').pendingRequests.length === 0";
+        
+        
 
         //Wait for ANGULAR to load
         ExpectedCondition<Boolean> angularLoad = driver -> Boolean.valueOf(((JavascriptExecutor) driver)
